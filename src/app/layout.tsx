@@ -24,7 +24,12 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-const SITE_URL = "https://www.premoldes.pt";
+// Usa o domínio de produção real da Vercel (premoldes.vercel.app agora; passa a
+// premoldes.pt automaticamente quando o domínio for ligado). Garante que a
+// og:image resolve sempre para um URL que existe (preview do WhatsApp/redes).
+const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "https://www.premoldes.pt";
 const DESCRIPTION =
   "Premolde Construções — moradias modulares em Light Steel Frame na Charneca de Caparica. Construção a seco, chave na mão, garantia de 5 anos. Peça orçamento.";
 
