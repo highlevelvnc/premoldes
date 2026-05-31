@@ -54,13 +54,20 @@ export const metadata: Metadata = {
     siteName: COMPANY.fullName,
     title: "Premolde Construções — Casas modulares em Light Steel Frame",
     description: DESCRIPTION,
-    images: [{ url: "/ai/hero.jpg", width: 1376, height: 768, alt: "Moradia moderna em LSF" }],
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Premolde Construções — casas modulares em Light Steel Frame",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Premolde Construções — Casas modulares em LSF",
     description: DESCRIPTION,
-    images: ["/ai/hero.jpg"],
+    images: ["/og.jpg"],
   },
   robots: { index: true, follow: true },
 };
