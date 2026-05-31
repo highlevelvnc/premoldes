@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude / ficheiros de trabalho
+/.claude/
+/_shots/
+/_shots3/
+/_scrape/

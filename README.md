@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Premolde Construções — Website
 
-## Getting Started
+Landing page premium para a **Premolde Construções** — moradias modulares em
+Light Steel Frame (Charneca de Caparica, Almada). One-page mobile-first com
+foco em conversão por WhatsApp.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) · **TypeScript** · **Tailwind CSS 3**
+- **GSAP** (ScrollTrigger) + **anime.js v4** para as animações
+- `next/font` (Manrope · Work Sans · JetBrains Mono)
+
+## Destaques
+
+- **Hero** cinematográfico com parallax
+- **Animação central** (`#construir`): maquete 3D isométrica em SVG de uma
+  moradia LSF que se monta peça a peça com o scroll, com labels técnicos, e
+  cross-fade para foto real
+- **Modelos**, **slider de obras**, secção-declaração editorial, processo,
+  sobre e contacto
+- Scroll-reveal robusto (IntersectionObserver + fallback)
+
+## Desenvolvimento
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de produção
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Onde editar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Quase tudo está centralizado em **`src/lib/constants.ts`**:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `WHATSAPP_URL` e `COMPANY` — número de WhatsApp e dados da empresa
+- `MODELS` — gama de modelos (**áreas e preços são placeholders a confirmar com o cliente**)
+- `PORTFOLIO`, `ADVANTAGES`, `BUILD_STEPS`, `STATS`, `FAQ`
 
-## Learn More
+Imagens: `public/ai/` (geradas) e `public/portfolio/` (fotos reais do cliente).
+Cores da marca em `tailwind.config.ts` (`flame` = vermelho do logo).
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pronto para [Vercel](https://vercel.com/new). Build estático, sem variáveis de ambiente.
